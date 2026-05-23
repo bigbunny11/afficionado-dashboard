@@ -40,12 +40,13 @@ st.markdown("""
 # ── Load data ─────────────────────────────────────────────────────────────────
 @st.cache_data
 def load_data():
-    daily    = pd.read_csv('dashboard_daily_revenue.csv', parse_dates=['date'])
-    hourly   = pd.read_csv('dashboard_hourly.csv')
-    cats     = pd.read_csv('dashboard_categories.csv')
-    models   = pd.read_csv('dashboard_model_results.csv')
+    daily  = pd.read_csv('dashboard_daily_revenue.csv', parse_dates=['date'])
+    hourly = pd.read_csv('dashboard_hourly.csv')
+    cats   = pd.read_csv('dashboard_categories.csv')
+    models = pd.read_csv('dashboard_model_results.csv')
     return daily, hourly, cats, models
 
+# This line must be OUTSIDE and AFTER the function — not indented
 daily, hourly, cats, models = load_data()
 
 STORE_COLORS = {
